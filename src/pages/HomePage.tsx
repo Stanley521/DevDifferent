@@ -90,7 +90,7 @@ const HomePage: React.FC = () => {
             <div className='h-full flex flex-col justify-between border-grey-700 border-r-2' id="sidebar">
                 <div className='h-full flex flex-col border'>
                     <div className='p-3 flex bg-gray-100 text-xl'>
-                        <div className='sidebar_width'>
+                        <div className='sidebar_width hide'>
                             <span className=''>GLAM</span>
                         </div>
                         <span className='ml-3 text-2xl'>*.+</span>
@@ -98,13 +98,13 @@ const HomePage: React.FC = () => {
                     <div className='flex flex-col bg-gray-100 border-y-2'>
                         <div className='flex items-center'>
                             <img className="w-11 mx-3" src={IconHamburger} />
-                            <div className='sidebar_width text-gray-400'>
+                            <div className='sidebar_width hide text-gray-400'>
                                 <span>Screener</span>
                             </div>
                         </div>
                         <div className='flex items-center'>
                             <img className="w-11 mx-3" src={IconPortofolios} />
-                            <div className='sidebar_width text-gray-400'>
+                            <div className='sidebar_width hide text-gray-400'>
                                 <span>Portofolio</span>
                             </div>
                         </div>
@@ -115,7 +115,7 @@ const HomePage: React.FC = () => {
                                 return (
                                     <div key={index} className='py-3 flex items-center'>
                                         <img className="w-8 mx-4" src={value.src} />
-                                        <div className='sidebar_width px-0  text-black'>
+                                        <div className='sidebar_width hide px-0  text-black'>
                                             <span>{value.name}</span>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@ const HomePage: React.FC = () => {
                     <div>
                         <div className='flex items-center'>
                             <span className='text-gray-400 text-4xl mx-4 text-center align-middle'>+</span>
-                            <div className='sidebar_width pt-2 text-gray-400'>
+                            <div className='sidebar_width hide pt-2 text-gray-400'>
                                 <span className='text-nowrap'>CREATE PRODUCT</span>
                             </div>
                         </div>
@@ -134,7 +134,7 @@ const HomePage: React.FC = () => {
                 </div>
                 <div className='px-4 py-2  bg-gray-100 border-grey-700 border-r-2 select-container'>
                     <Select>
-                        <SelectTrigger className="border-grey-700 sidebar_width">
+                        <SelectTrigger className='sidebar_width hide border-grey-700'>
                             <img className="w-6 m-2" src={IconCoin} />
                             <SelectValue placeholder="D5uR...EDID" />
                         </SelectTrigger>
