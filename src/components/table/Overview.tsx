@@ -24,12 +24,10 @@ const OverviewTable: React.FC = () => {
                 horzLines: { visible: false },
                 vertLines: { visible: false },
             },
-            
         };
 
         const chart = createChart('overview_table', chartOptions);
-        const lineSeries = chart.addAreaSeries({ lineColor: '#2962FF', topColor: '#2962FF', bottomColor: 'black'});
-
+        const lineSeries = chart.addAreaSeries({ lineColor: '#2962FF', topColor: '#2962FF', bottomColor: 'black' });
         const data: LineData[] = [
             { value: 0, time: 1642425322 as UTCTimestamp },
             { value: 8, time: 1642511722 as UTCTimestamp },
@@ -42,11 +40,27 @@ const OverviewTable: React.FC = () => {
             { value: 56, time: 1643116522 as UTCTimestamp },
             { value: 46, time: 1643202922 as UTCTimestamp }
         ];
-
         lineSeries.setData(data);
-
         chart.timeScale().fitContent();
+
+        // Handle Resize
+        const chartContainer = document.getElementById("overview_table")
+        let resizeTimeout: string | number | NodeJS.Timeout;
+        const handleResize = () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                chart.applyOptions({
+                    width: chartContainer?.clientWidth || 0,
+                    height: chartContainer?.clientHeight || 0
+                });
+            }, 100); // Adjust the debounce delay as needed
+        };
+        window.addEventListener('resize', handleResize);
+        //---Handle Resize
     }
+
+
+
     React.useEffect(() => {
         initTable()
     }, [])
