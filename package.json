@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@radix-ui/react-select": "^2.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
     "@reduxjs/toolkit": "^2.2.6",
     "@solana/web3.js": "^1.94.0",
     "@testing-library/jest-dom": "^6.4.6",
