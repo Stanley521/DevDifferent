@@ -3,14 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@radix-ui/react-select": "^2.1.1",
     "@reduxjs/toolkit": "^2.2.6",
     "@solana/web3.js": "^1.94.0",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^14.3.1",
     "@testing-library/user-event": "^14.5.2",
     "axios": "^1.7.2",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "eslint-plugin-prettier": "^5.1.3",
     "lightweight-charts": "^4.1.6",
+    "lucide-react": "^0.399.0",
     "moment": "^2.30.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -20,6 +24,8 @@
     "redux-persist": "^6.0.0",
     "sass": "^1.77.6",
     "sass-loader": "^14.2.1",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
     "wallet-standard": "^1.0.3"
   },
   "scripts": {
@@ -29,7 +35,7 @@
     "eject": "craco eject",
     "lint": "eslint --cache .",
     "format": "prettier --check .",
-    "tailwindcss": "tailwindcss -c ./tailwind.config.js -i ./src/input.css -o ./src/output.css"
+    "tailwindcss": "tailwindcss -c ./tailwind.config.js -i ./src/styles/global.css -o ./src/styles/global-compiled.css"
   },
   "eslintConfig": {
     "extends": "react-app"

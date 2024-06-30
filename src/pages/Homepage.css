@@ -1,0 +1,30 @@
+
+.select-container button {
+    width: auto;
+}
+
+
+
+.sidebar_width {
+    overflow: hidden;
+}
+
+.sidebar_width span{
+    transition: width 1s;
+    display: block;
+    width: 11rem; 
+}
+
+
+
+
+.sidebar_width.hide span {
+    width: 0;
+    text-align: left;
+}
+.sidebar_width.hide svg {
+    display: none;
+}
+.select-container > button {
+    padding: 0;
+}
