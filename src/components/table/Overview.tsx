@@ -46,16 +46,21 @@ const OverviewTable: React.FC = () => {
         // Handle Resize
         const chartContainer = document.getElementById("overview_table")
         let resizeTimeout: string | number | NodeJS.Timeout;
-        const handleResize = () => {
+        const resizeObserver = new ResizeObserver(entries => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
-                chart.applyOptions({
-                    width: chartContainer?.clientWidth || 0,
-                    height: chartContainer?.clientHeight || 0
-                });
-            }, 100); // Adjust the debounce delay as needed
-        };
-        window.addEventListener('resize', handleResize);
+                for (const entry of entries) {
+                    chart.applyOptions({
+                        width: entry.contentRect.width || 0,
+                        height: entry.contentRect.height || 0
+                    });
+                }
+            }, 10); // Adjust the debounce delay as needed
+        });
+
+        if (chartContainer) {
+            resizeObserver.observe(chartContainer);
+        }
         //---Handle Resize
     }
 
