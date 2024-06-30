@@ -63,17 +63,16 @@ const HomePage: React.FC = () => {
 
         const els = sidebar.getElementsByClassName("sidebar_width") as HTMLCollectionOf<Element>;
 
-        // sidebar.addEventListener("mouseenter", function () {
-        //     console.log('mouseenter')
-        //     Array.from(els).forEach((el) => {
-        //         el.classList.remove('hide')
-        //     });
-        // });
-        // sidebar.addEventListener("mouseleave", function () {
-        //     Array.from(els).forEach((el) => {
-        //         el.classList.add('hide')
-        //     });
-        // });
+        sidebar.addEventListener("mouseenter", function () {
+            Array.from(els).forEach((el) => {
+                el.classList.remove('hide')
+            });
+        });
+        sidebar.addEventListener("mouseleave", function () {
+            Array.from(els).forEach((el) => {
+                el.classList.add('hide')
+            });
+        });
     }, [])
     return (
         <div style={{ position: 'relative', width: '100%', height: '100vh', display: 'flex', flexDirection: 'row' }}>
